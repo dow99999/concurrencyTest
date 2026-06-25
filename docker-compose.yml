@@ -1,0 +1,10 @@
+services:
+  web:
+    image: web-server:v1
+    ports:
+      - "80:80"
+
+  data:
+    image: data-server:v1
+    ports:
+      - "3000:3000"

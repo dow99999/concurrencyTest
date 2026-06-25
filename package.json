@@ -1,0 +1,22 @@
+{
+  "name": "concurrencytest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "docker build -t web-server:v1 ./webServer && docker build -t data-server:v1 ./dataManager",
+    "init": "npm run init-swarm && npm run init-registry",
+    "init-swarm": "docker swarm init",
+    "init-registry": "docker service create --name registry --publish published=5000,target=5000 registry:2",
+    "get-nodes": "docker node ls",
+    "get-services": "docker service ls",
+    "scale": "docker service scale",
+    "update": "docker service update --image web-server:v1 webstack_web && docker service update --image data-server:v1 webstack_data",
+    "start": "docker stack deploy --compose-file docker-compose.yml webstack",
+    "stop": "docker stack rm webstack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

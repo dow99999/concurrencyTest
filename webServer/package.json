@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "docker build -t webserver:v1 .",
+    "start": "docker run --rm -d -p 8080:80 webserver:v1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
