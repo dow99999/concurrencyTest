@@ -1,9 +1,3 @@
-FROM node:24-alpine
+FROM alpine/mariadb:11.8.8
 
-COPY . .
-
-RUN npm i
-
-EXPOSE 3000
-
-CMD ["node", "main.js"]
+EXPOSE 3306
