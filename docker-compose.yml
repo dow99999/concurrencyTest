@@ -2,7 +2,7 @@ services:
   web:
     image: web-server:v1
     ports:
-      - "80:80"
+      - "8080:80"
 
   data:
     image: data-server:v1
